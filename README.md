@@ -2,8 +2,12 @@
 
 Simple demonstration of authentication and role-based access control.
 
-**Author:** Paul Sommers  
+**Author:** Paul Sommers
 **Course:** SDEV245
+
+## Live Demo
+
+Public demo available at: https://auth-demo.sommerscloud.com/
 
 ## What This Does
 
@@ -42,6 +46,7 @@ Then go to http://localhost:5000
 - `templates/` - HTML templates
 - `requirements.txt` - Dependencies (just Flask)
 
-## GitHub
+## Links
 
-https://github.com/psommers1/RBAC-Authentication-Mini-App
+- **GitHub:** https://github.com/psommers1/RBAC-Authentication-Mini-App
+- **Live Demo:** https://auth-demo.sommerscloud.com/
