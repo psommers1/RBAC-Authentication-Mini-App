@@ -18,6 +18,12 @@ This app demonstrates **Confidentiality** by requiring users to log in before ac
 
 ## How to Run
 
+**Option 1: With Docker (recommended)**
+```bash
+docker-compose up --build
+```
+
+**Option 2: Without Docker**
 ```bash
 pip install -r requirements.txt
 python app.py
