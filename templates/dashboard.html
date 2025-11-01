@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .btn {
+            background: #f44336;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn:hover { background: #da190b; }
+        .role-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .admin { background: #ff9800; color: white; }
+        .user { background: #2196F3; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>Welcome, <strong>{{ username }}</strong>!</p>
+    <p>Your role: <span class="role-badge {{ role }}">{{ role }}</span></p>
+    
+   <p>This demonstrates role-based access control. Different users have different roles which determine their permissions.</p>
+    
+    <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+</body>
+</html>

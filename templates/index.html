@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RBAC Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .btn {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .btn:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>RBAC Authentication Demo</h1>
+    <p>This is a simple demonstration of authentication and role-based access control.</p>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p style="color: {% if category == 'error' %}red{% elif category == 'success' %}green{% else %}blue{% endif %}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    {% if session.get('username') %}
+        <p>Logged in as: <strong>{{ session.get('username') }}</strong> ({{ session.get('role') }})</p>
+        <a href="{{ url_for('dashboard') }}" class="btn">Go to Dashboard</a>
+        <a href="{{ url_for('logout') }}" class="btn" style="background: #f44336;">Logout</a>
+    {% else %}
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
+    {% endif %}
+</body>
+</html>
